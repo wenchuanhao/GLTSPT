@@ -1,0 +1,27 @@
+body {font-family:"微软雅黑", arial;margin:0;padding:0;font-size:12px; color:#57595d; background:#FFF;}
+div,form,img,ul,ol,li,dl,dt,dd {margin: 0; padding: 0; border: 0;}
+h1,h2,h3,h4,h5,h6,p{ margin:0; padding:0; font-style:normal;}
+table,td,tr,th{font-size:12px;}
+ul,li{margin:0; padding:0; list-style:none;}
+em,i{ font-style:normal;}
+
+a:link {text-decoration:none; color:#57595d;}
+a:visited {text-decoration:none; color:#57595d;}
+a:hover {text-decoration:none;color: #005bab; text-decoration:underline;}
+a:active {text-decoration:none;}
+
+/*弹出框开始*/
+.tang_a01{ width:528px; height:282px; position: relative; top:-200px; margin:0 auto; background:url(../images/tang01.png) no-repeat;border: none;}
+.tang_a01_top{ height:48px; line-height:48px; padding-top:4px; font-size:18px; text-align:center; color:#FFF;}
+.tang_xx{ width:25px; height:25px; position:absolute; top:15px; right:15px; cursor:pointer;}
+.tang_font01{ width:450px; margin:10px auto; font-size:14px; line-height:30px; padding-top:15px; padding-bottom:15px;border-bottom:1px solid #F7E3CB;word-spacing:4px;}
+.tang_font02{ width:450px; margin:10px auto; font-size:12px; line-height:40px;}
+.tang_gg01{ width:87px; height:34px; background:url(../images/tang_bnt01.png) no-repeat; border:none; float:right; cursor:pointer; margin-top:6px;}
+
+
+
+
+
+
+
+

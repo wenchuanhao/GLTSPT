@@ -1,0 +1,106 @@
+.mr10{
+	margin:10px auto;
+}
+/*工程管理、制度管理、经分专区*/
+/*新增投资编码页面*/
+.searchCondition{
+	margin-top:20px;
+}
+.searchCondition_header{
+	background:#4084b6 !important;
+}
+.reeditTable{
+	padding:15px 0; 
+}
+.reeditTable tr{
+	height:50px;
+}
+.reeditTable tr th{
+	color:#595959 !important;
+}
+.btn_common02{
+	background:#4084b6 !important;
+}
+.btn_common04,.btn_reset,.btn_common01,.btn_back{
+	color:#4084b6 !important;
+}
+.btn_common04:hover,.btn_reset:hover,.btn_common01:hover,.btn_back:hover{
+	border-color:#4084b6 !important;
+}
+.btn_search{
+	background-color:#4084b6 !important;
+}
+.listTable th{
+	background:#fff;
+}
+.listTable tr:hover td{
+	background: rgba(9,101,170,.3) !important;
+}
+.listTable span a,.listTable b a{
+	color:#4084b6 !important;
+}
+.gd_page a.go,.gd_page a.current,.gd_page a:hover{
+	background-color:#4084b6 !important;
+}
+/*与我相关页面*/
+.tabpages ul li{
+	color:#4084b6 !important;
+}
+.tabpages ul li:hover{
+	background-color: #4084b6 !important;
+	color:#fff !important;
+}
+.tabpages ul li.current{
+	background:#4084b6 !important;
+	color:#fff !important;
+}
+
+.shenglue,.box_title{
+	color:#4084b6;
+}
+
+.listTable i a{
+	color:#4084b6 !important;
+}
+
+/* 系统管理 */
+.gl_text01_a,.select_new01,.gl_text01{
+	border-radius:5px !important;
+	-webkit-border-radius:5px !important;
+	-moz-border-radius:5px !important;
+	height:30px !important;
+	line-height:30px !important;
+	padding:0 10px !important;
+	margin:5px 0 !important;
+}
+.gl_table_a02 th{
+	background:#cceeff !important;
+}
+.tab_c_tr01{
+	background:#cceeff !important;
+}
+.gl_table_a02 tr:hover{
+	/*background:#cceeff !important;*/
+	background: rgba(9,101,170,.3) !important;
+}
+
+.statistic_wrap .sta_title{
+	color:#4084b6 !important;
+}
+
+.chart_title{
+	color:#4084b6 !important;
+	border-left: 5px solid #4084b6 !important;
+}
+
+.chart_bar .current, .chart_bar li:hover {
+    border-bottom: 3px solid #4084b6 !important;
+}
+
+.listTable strong a{
+	color:#4084b6 !important;
+}
+.readOnlyTable th,.taskCreate th{
+	color:#595959 !important;
+}
+

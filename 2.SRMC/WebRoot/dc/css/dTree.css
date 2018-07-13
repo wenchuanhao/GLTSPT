@@ -1,0 +1,33 @@
+
+/*左侧功能树菜单区域*/
+.d_tree_div{ padding:10px 20px;font-family:"Microsoft YaHei";}
+
+
+
+.dtree {
+	FONT-SIZE: 12px; COLOR: #000000; font-family:"Microsoft YaHei"; WHITE-SPACE: nowrap
+}
+.dtree IMG {
+	BORDER-RIGHT: 0px; BORDER-TOP: 0px; VERTICAL-ALIGN: middle; BORDER-LEFT: 0px; BORDER-BOTTOM: 0px
+}
+.dtree A {
+	COLOR: #000000; TEXT-DECORATION: none;
+}
+.dtree A.node {
+	PADDING-RIGHT: 2px; PADDING-LEFT: 8px; PADDING-BOTTOM: 1px; PADDING-TOP: 1px; WHITE-SPACE: nowrap
+}
+.dtree A.nodeSel {
+	PADDING-RIGHT: 2px; PADDING-LEFT: 2px; PADDING-BOTTOM: 1px; PADDING-TOP: 1px; WHITE-SPACE: nowrap
+}
+.dtree A.node:hover {
+	COLOR: #51aff0; TEXT-DECORATION: underline
+}
+.dtree A.nodeSel:hover {
+	COLOR: #FF3300; TEXT-DECORATION: underline
+}
+.dtree A.nodeSel {
+	COLOR: #ff3300;
+}
+.dtree .clip {
+	OVERFLOW: hidden
+}

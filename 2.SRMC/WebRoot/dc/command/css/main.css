@@ -1,0 +1,53 @@
+@charset "utf-8";
+/* CSS Document */
+/*按钮样式*/
+.goodcover {
+	display: none;
+	position: absolute;
+	top: 0%;
+	left: 0%;
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	z-index: 1001;
+	-moz-opacity: 0.8;
+	opacity: 0.50;
+	filter: alpha(opacity=80);
+}
+.code {
+	width: 20rem;
+	height: 15.4rem;
+	background-color: #fff;
+	padding: 10px;
+	position: absolute;
+	display: none;
+	z-index: 1002;
+	border-radius:.4rem;
+	top:50%;
+	margin-top:-8rem;
+	left:50%;
+	margin-left:-11rem;
+}
+.close1 {
+	text-align:center;
+	margin-top:1.2rem;
+}
+.close1 a:link,.close1 a:hover,.close1 a:active,.close1 a:visited{ color:#fff;}
+.closebt { color:#ffffff; background-color:#76cdff; padding:.5rem 1.3rem; border-radius:1.4rem; font-size:1.5rem}
+.close1 .a_1 {color:#76cdff; background-color:#ffffff; padding:.5rem 1.3rem; border-radius:1.4rem; font-size:1.5rem; border:1px solid #76cdff;}
+.goodtxt {
+	text-align: center;
+	margin-top:1.7rem;
+}
+.goodtxt .img_1 {width:0.8rem; height:3.2rem}
+.goodtxt .img_2 {width:4.3rem; height:3.5rem}
+.goodtxt .p1 {
+	line-height: 3.2rem;
+	font-size: 1.5rem;
+	color: #f39800;
+}
+.goodtxt .p2 {
+	line-height: 3.2rem;
+	font-size: 1.5rem;
+	color: #76cdff;
+}

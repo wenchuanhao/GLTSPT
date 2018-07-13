@@ -1,0 +1,134 @@
+@charset "utf-8";
+
+/*ui-select样式，可根据实际项目需求进行调整*/
+
+
+.ui-select-wrap {
+  display: inline-block;
+  border: 1px solid #d4e4ef;
+  position: relative;
+  height: 30px;
+  padding-right: 15px;
+  background-color: #fff;
+  cursor: pointer;
+  font: 100 16px/30px;
+  -webkit-user-select: none;
+  user-select: none;
+  z-index: 8;
+  vertical-align:top;
+  border-radius:5px;
+}
+
+.ui-select-wrap.focus { z-index: 9; }
+
+select.ui-select {
+  height: 30px;
+  vertical-align: top;
+  padding: 0 8px 0 4px;
+  border: 1px solid #d4e4ef;
+  border-radius: 5px;
+  background-color: #fff;
+  font: 100 16px/30px;
+}
+
+select.ui-select option{
+  height: 30px;
+  vertical-align: top;
+  padding: 0 8px 0 4px;
+  border: 0px solid #d4e4ef;
+  border-radius: 5px;
+  background-color: #fff;
+  font: 100 16px/30px;
+}
+
+.ui-select>select {
+  display: none;
+  height: 32px;
+  vertical-align: top;
+  padding: 0 8px;
+  border: 0px solid #aaa;
+}
+
+.ui-select-input {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 6px;
+  bottom: 0;
+  right: 15px;
+  padding-left: 8px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.ui-select-arrow {
+  display: block;
+  position: absolute;
+  right: 10px;
+  top: 40%;
+  height: 0;
+  width: 0;
+  border: 5px solid transparent;
+  border-width: 6px 5px 0 5px;
+  border-top-color: #0080cc;
+}
+
+.ui-select-list {
+  display: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  z-index: 10;
+  left: -1px;
+  top: 30px;
+  background-color: #fff;
+  border: 0px solid #d4e4ef;
+  width: 100%;
+  overflow: auto;
+  max-height: 200px;
+  border-radius: 0 3px 3px 3px;
+}
+
+.ui-select-wrap.up .ui-select-list {
+  top: auto;
+  bottom: 30px;
+}
+
+.ui-select-wrap.focus .ui-select-list { display: block; }
+
+.ui-select-list>li {
+  display: block;
+  line-height: 28px;
+  padding: 0 10px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ui-select-list>li:hover { background-color: #fff5c8; }
+
+.ui-select-list>li.selected {
+  background-color: #a9d6f6;
+  color: #fff;
+}
+
+.ui-select-list>li.disabled {
+  background-color: #f2f2f2;
+  color: #999;
+  cursor: not-allowed;
+}
+
+.ui-select-list>li.disabled.selected {
+  background-color: #59ADFF;
+  color: #f2f2f2;
+  cursor: not-allowed;
+}
+
+.ui-select-wrap.disabled {
+  color: #999;
+  border-color: #ccc;
+  cursor: not-allowed;
+}
+
+.ui-select-wrap.disabled .ui-select-arrow { border-top-color: #ccc; }

@@ -1,0 +1,35 @@
+
+/*×ó²à¹¦ÄÜÊ÷²Ëµ¥ÇøÓò*/
+.d_tree_div{ padding-top:15px; padding-left:30px;}
+
+
+
+.dtree {
+	FONT-SIZE: 14px; COLOR: #000000; font-family:"Î¢ÈíÑÅºÚ"; WHITE-SPACE: nowrap
+}
+.dtree IMG {
+	BORDER-RIGHT: 0px; BORDER-TOP: 0px; VERTICAL-ALIGN: middle; BORDER-LEFT: 0px; BORDER-BOTTOM: 0px
+}
+.dtree A {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+.dtree A.node {
+	PADDING-RIGHT: 2px; PADDING-LEFT: 2px; PADDING-BOTTOM: 1px; PADDING-TOP: 1px; WHITE-SPACE: nowrap
+}
+.dtree A.nodeSel {
+	PADDING-RIGHT: 2px; PADDING-LEFT: 2px; PADDING-BOTTOM: 1px; PADDING-TOP: 1px; WHITE-SPACE: nowrap
+}
+.dtree A.node:hover {
+	COLOR: #00a9da; TEXT-DECORATION: underline
+}
+.dtree A.nodeSel:hover {
+	COLOR: #00a9da
+; TEXT-DECORATION: underline
+}
+.dtree A.nodeSel {
+	COLOR: #00a9da
+;
+}
+.dtree .clip {
+	OVERFLOW: hidden
+}

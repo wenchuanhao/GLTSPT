@@ -1,0 +1,57 @@
+.pro_bar{height: 100px;padding-left:5%;}
+.pro_bar li{float: left;width: 30.67%;list-style: none;position: relative;}
+.pro_bar li h3{
+	font-family: "微软雅黑";
+	font-weight: normal;
+	font-size: 14px;
+	color: #333;
+	margin-top: 0;
+	margin-bottom: 10px;
+	margin-left:-34px;
+	text-align: center;
+	width: 90px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.pro_bar li h4{font-weight: normal;font-family: "微软雅黑";font-size: 12px;color: #666;margin-top: 40px;margin-bottom: 0;margin-left:-24px;width: 70px;text-align: center;}
+.pro_bar li i{
+	display: block;
+	width: 35px;
+	height: 35px;
+	left: -6px;
+	position: absolute;
+	z-index: 2;
+	background:url(../images/nodone_bet.png) no-repeat;
+	color: #fff;
+	line-height: 35px;
+	text-align: center;
+	font-weight: bold;
+	font-style: normal;
+	font-family: Arial;
+}
+.dot{
+	display: block;
+	position: absolute;
+	top:60px;
+	left: 5px;
+	width: 12px;
+	height: 8px;
+	z-index: 1;
+	background: url(../images/dot.png) center center no-repeat;
+}
+.pro_bar li div{
+	height: 4px;
+	width: 100%;
+	position: relative;
+	top: 15px;
+	z-index: 1;
+}
+.gray_line{background-color: #b3b5b7;}
+.blue_line{background-color: #6db2df;}
+.pro_bar .ico_start .active{background: url(../images/active_start.png) no-repeat;}
+.pro_bar .ico_start .done{background: url(../images/done_right.png) no-repeat;}
+.ico_end{width: 3%!important;*width: 36px!important;}
+.pro_bar .ico_end i{background: url(../images/nodone_left.png) no-repeat;}
+.pro_bar .ico_end .active{background: url(../images/active_left.png) no-repeat;}
+.pro_bar .ico_end .done{background: url(../images/done_left.png) no-repeat;}
