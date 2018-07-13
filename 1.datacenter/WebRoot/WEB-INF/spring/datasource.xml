@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING/DTD BEAN/EN"
+        "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans default-lazy-init="false">
+    <description>
+        SpringFramework Configuration by 
+    </description>
+
+    <bean id="log-filter" class="com.alibaba.druid.filter.logging.Log4jFilter">
+        <property name="statementExecutableSqlLogEnable" value="true" />
+    </bean>
+
+
+<!-- 对JDBC配置进行解密  --> 
+    <bean id="propertyConfigurer" class="com.cdc.inter.client.db.oracle.security.EncryptablePropertyPlaceholderConfigurer">  
+            <property name="locations">
+                <list>
+                    <value>classpath:jdbc/oracle.properties</value>
+                </list>
+            </property>
+    </bean>
+    
+    <bean id="defaultDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+        <!-- 开发环境 -->
+        <property name="driverClass">
+            <value>${datasource.driverClassName}</value>
+        </property>
+
+        <property name="jdbcUrl">
+            <value>${datasource.url}</value>
+        </property>
+        <property name="user">
+            <value>${datasource.username}</value>
+        </property>
+        <property name="password">
+            <value>${datasource.password}</value>
+        </property>
+        <!-- 配置初始化大小、最小、最大 -->
+  		<property name="initialPoolSize">
+            <value>3</value>
+        </property>
+  		<property name="minPoolSize">
+            <value>1</value>
+        </property>
+  		<property name="maxPoolSize">
+            <value>20</value>
+        </property>
+<!--      配置获取连接等待超时的时间   maxWait -->
+        <property name="maxIdleTime" value="60000" /> 
+        
+<!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 -->
+        <property name="idleConnectionTestPeriod" value="60000" /> 
+        
+<!--         校验用sql语句 -->
+        <property name="preferredTestQuery" value="SELECT 'x'" />
+        <property name="testConnectionOnCheckin" value="false" />
+        <property name="testConnectionOnCheckout" value="false" />
+        
+        <!-- 打开PSCache，并且指定每个连接上PSCache的大小 -->
+        <property name="maxStatements" value="500" /> 
+        <property name="maxStatementsPerConnection" value="30" /> 
+        
+    </bean>
+
+</beans>

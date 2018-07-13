@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING/DTD BEAN/EN"
+ "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans default-lazy-init="false">
+	<description>系统管理服务 sunsf</description>
+    
+    <!--报账量化管理服务 -->
+	<bean id="accService" class="com.cdc.dc.account.service.impl.AccountServiceImpl">
+		<property name="enterpriseService">
+			<ref bean="enterpriseService" />
+		</property>
+	</bean>
+	
+	<!--应用系统管理服务 -->
+	<bean id="appSysManage" class="com.cdc.sys.service.AppSysManageService">
+		<property name="enterpriseService">
+			<ref bean="enterpriseService" />
+		</property>
+	</bean>
+	
+	<!--数据获取管理服务 -->
+	<bean id="clientManageService" class="com.cdc.sys.dcManage.service.impl.DataClientManageServiceImpl">
+		<property name="enterpriseService">
+			<ref bean="enterpriseService" />
+		</property>
+	</bean>
+	
+    <!--合交经分服务 -->
+	<bean id="cooperationService" class="com.cdc.dc.cooperation.service.impl.CooperationServiceImpl">
+		<property name="enterpriseService">
+			<ref bean="enterpriseService" />
+		</property>
+		<property name="rulesService">
+			<ref bean="rulesService" />
+		</property>
+ 		<property name="smsService">
+ 			<ref bean="smsService" />
+ 		</property>
+	</bean>
+	
+	<!--报账经分服务 -->
+	<bean id="laungchAgingService" class="com.cdc.dc.report.accountReport.service.impl.LaungchAgingServiceImpl">
+		<property name="enterpriseService">
+			<ref bean="enterpriseService" />
+		</property>
+	</bean>
+	
+	<!--服务运行日志 -->
+	<bean id="logService" class="com.cdc.sys.serviceLog.service.impl.ServiceRunLogServiceImpl">
+		<property name="enterpriseService">
+			<ref bean="enterpriseService" />
+		</property>
+	</bean>
+	
+	<!-- 数据预警 -->
+	<bean id="warnService" class="com.cdc.sys.dataWarn.service.impl.DataWarnServiceImpl">
+		<property name="enterpriseService">
+			<ref bean="enterpriseService" />
+		</property>
+	</bean>
+	
+    <!--元数据表管理 -->
+	<bean id="yuanService" class="com.cdc.dc.metadata.yuan.service.impl.YuanServiceImpl">
+		<property name="enterpriseService">
+			<ref bean="enterpriseService" />
+		</property>
+	</bean>	
+</beans>

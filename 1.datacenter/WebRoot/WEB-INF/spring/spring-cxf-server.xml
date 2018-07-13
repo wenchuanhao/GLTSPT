@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:cxf="http://cxf.apache.org/core"
+       xmlns:jaxws="http://cxf.apache.org/jaxws"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+       http://cxf.apache.org/core
+       http://cxf.apache.org/schemas/core.xsd
+       http://cxf.apache.org/jaxws
+       http://cxf.apache.org/schemas/jaxws.xsd">
+ 
+     <!--  <jaxws:endpoint id="helloworld"
+                    implementor="cxfdemo.server.HelloWorldImpl"
+                    address="/helloworld">
+        <jaxws:inInterceptors>
+            <ref bean="wss4jInInterceptor"/>
+        </jaxws:inInterceptors> 
+    </jaxws:endpoint>
+    
+    <bean id="wss4jInInterceptor" class="org.apache.cxf.ws.security.wss4j.WSS4JInInterceptor">
+        <constructor-arg>
+            <map>
+                解密 与 验签
+                <entry key="action" value="Encrypt Signature"/>
+                解密（使用自己的私钥）
+                <entry key="decryptionPropFile" value="server.properties"/>
+                <entry key="passwordCallbackRef" value-ref="serverPasswordCallback"/>
+                验签（使用对方的公钥）
+                <entry key="signaturePropFile" value="server.properties"/>
+            </map>
+        </constructor-arg>
+    </bean>
+    <bean id="serverPasswordCallback" class="cxfdemo.server.ServerPasswordCallback"></bean> -->
+    
+    <bean id="serverPasswordCallback" class="cxfdemo.server.ServerPasswordCallback" />  
+    <jaxws:endpoint id="helloworld" implementor="cxfdemo.server.HelloWorldImpl"  
+        address="/helloworld">  
+        <jaxws:inInterceptors>  
+            <bean class="org.apache.cxf.interceptor.LoggingInInterceptor" />  
+            <!-- SAAJInInterceptor只在CXF是2.0.X版本时或之前版本时才是必须的 -->  
+            <!-- <bean class="org.apache.cxf.binding.soap.saaj.SAAJInInterceptor"/> -->  
+            <bean class="org.apache.cxf.ws.security.wss4j.WSS4JInInterceptor">  
+                <constructor-arg>  
+                    <map>  
+                        <entry key="action" value="UsernameToken" />  
+                        <entry key="passwordType" value="PasswordText" />  
+                        <entry key="user" value="FHDServer" />  
+                        <entry key="passwordCallbackRef">  
+                            <ref bean="serverPasswordCallback" />  
+                        </entry>  
+                    </map>  
+                </constructor-arg>  
+            </bean>  
+        </jaxws:inInterceptors>  
+    </jaxws:endpoint>  
+    
+     <!--    
+        action:                 UsernameToken               指使用用户名令牌    
+        passwordType:           PasswordText                指密码加密策略，这里直接文本    
+        user:                   FHDServer                   指别名    
+        passwordCallBackRef:    serverPasswordCallback      指消息验证    
+     --> 
+          
+</beans>

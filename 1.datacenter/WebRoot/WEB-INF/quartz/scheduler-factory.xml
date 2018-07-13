@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+    <!--
+	<bean
+		class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+
+				<ref bean="loadConfigurationTrigger" />
+				<ref bean="sendJobTrigger" />
+				<ref bean="versionTrigger" />
+				<ref bean="checkWorkorderDetailsTrigger" />
+                <ref bean="timeOutTaskScheduler" />
+
+            </list>
+		</property>
+	</bean>
+	-->
+	<bean id="schedulerFactoryBean"
+		class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>			
+				<!--附件删除：定时清理无效附件  start -->
+                <ref bean="rulesDelfileTrigger" />
+                <!-- 定时计算报账时效 start-->
+                <ref bean="countAccountTrigger"/>
+<!-- 				<ref bean="syncUserTaskfileTrigger" /> 定时同步用户信息-->
+<!-- 				<ref bean="syncOrgTaskfileTrigger" />  定时同步组织架构信息-->
+                <!--<ref bean="QianlimaMSServiceTrigger" />定时获取千里马数据源 -->
+                <!--<ref bean="GongzuoliuMSServiceTrigger" />定时获取工作流平台数据源 -->
+                <ref bean="CangkuMSServiceTrigger" /><!--定时获取仓库系统数据源 -->
+                <ref bean="GcUtilsTrigger" /><!--定时执行工程文档过期预警 -->                
+                <!-- <ref bean="InitTaskTrigger" />配置定时任务，用于初始化定时器 -->
+                <ref bean="syncDivsionTaskTrigger" /><!-- 定时同步物业管理平台数据 -->
+            </list>
+		</property>
+	</bean>
+</beans>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING/DTD BEAN/EN"
+ "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans default-lazy-init="false">
+	<description>制度管理</description>
+
+	<!-- 制度管理服务 -->
+	<bean id="rulesService" class="com.cdc.dc.rules.service.impl.RulesServiceImpl">
+		<property name="enterpriseService">
+			<ref bean="enterpriseService" />
+		</property>
+<!--  		<property name="manageTaskClient"> -->
+<!-- 			<ref bean="manageTaskClient" /> -->
+<!-- 		</property> -->
+	</bean>
+</beans>

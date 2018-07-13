@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean name='configurationLoader'
+		class="org.trustel.scheduling.service.DefaultConfigurationLoader">
+		<property name="jobs">
+			<list></list>
+		</property>
+	</bean>
+	<bean name="loadConfigurationJob" class="org.springframework.scheduling.quartz.JobDetailFactoryBean">
+		<property name="jobClass"
+			value="org.trustel.scheduling.service.LoadConfigurationJob">
+		</property>
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="loader">
+					<ref bean="configurationLoader" />
+				</entry>
+			</map>
+		</property>
+	</bean>
+	
+	<!--附件删除：定时清理无效附件  start -->
+	<bean id="delFileTasks" class="com.cdc.dc.rules.task.RulesDelfileTask">
+		<property name="rulesService">
+			<ref bean="rulesService" />
+		</property>		
+	</bean>
+	<bean id="rulesDelfile"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="delFileTasks" />
+		<property name="targetMethod" value="delFileTask" />		
+	</bean>
+	<bean id="rulesDelfileTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail" ref="rulesDelfile" />
+		<!-- 定义触发的时间 -->
+		<property name="cronExpression">
+			<value>0 0 8 * * ?</value>
+		</property>
+	</bean>
+    <!-- 附件删除：定时清理无效附件   end --> 
+    
+    <!-- 定时计算报账时效 start-->
+    <bean id="countAccountTask" class="com.cdc.dc.account.task.AccountTask">
+		<property name="accService">
+			<ref bean="accService" />
+		</property>	
+		<property name="holidayService">
+			<ref bean="holidayService" />
+		</property>	
+	</bean>
+	<bean id="countAccount"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="countAccountTask" />
+		<property name="targetMethod" value="accountTask" />		
+	</bean>
+	<bean id="countAccountTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail" ref="countAccount" />
+		<!-- 定义触发的时间 -->
+		<property name="cronExpression">
+			<value>0 0/20 * * * ?</value>
+		</property>
+	</bean>
+	<!-- 定时计算报账时效 end -->
+	
+    <!--定时同步用户信息  start -->
+<!--    
+	<bean id="syncUserTask" class="com.cdc.dc.rules.task.SyncUserTask">
+		<property name="sysUserService">
+			<ref bean="sysUserService" />
+		</property>	
+		<property name="inquiryUserInfoClient">
+			<ref bean="inquiryUserInfoClient" />
+		</property>		
+	</bean>
+	<bean id="syncUserTaskfile"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="syncUserTask" />
+		<property name="targetMethod" value="syncUserTask" />		
+	</bean>
+	<bean id="syncUserTaskfileTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail" ref="syncUserTaskfile" />
+		<property name="cronExpression">
+			<value>0 0 3 ? * *</value>
+		</property>
+	</bean>
+ -->
+    <!-- 定时同步用户信息   end --> 
+     
+    <!--定时同步组织信息  start -->
+    <!--    
+    <bean id="syncOrgTask" class="com.cdc.dc.rules.task.SyncOrgTask">
+		<property name="organizationService">
+			<ref bean="organizationService" />
+		</property>	
+		<property name="ouInfoClient">
+			<ref bean="ouInfoClient" />
+		</property>		
+	</bean>
+	<bean id="syncOrgTaskfile"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="syncOrgTask" />
+		<property name="targetMethod" value="syncOrgTask" />		
+	</bean>
+	<bean id="syncOrgTaskfileTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail" ref="syncOrgTaskfile" />
+		<property name="cronExpression">
+			<value>0 0 1 ? * *</value>
+		</property>
+	</bean>
+ -->
+    <!-- 定时同步组织信息   end --> 
+    
+    <!-- 定时执行千里马数据源 start -->
+    <bean id="QianlimaMSService" class="com.cdc.inter.client.db.sqlserver.QianlimaMSService" />
+	<bean id="QianlimaMSServiceJob" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="QianlimaMSService" />
+		<property name="targetMethod" value="main" />		
+	</bean>
+	<bean id="QianlimaMSServiceTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail" ref="QianlimaMSServiceJob" />
+		<!-- 定义触发的时间 -->
+		<property name="cronExpression">
+			<value>0 0/1 * * * ?</value>
+		</property>
+	</bean>
+	<!-- 定时执行千里马数据源 end -->
+    
+    <!-- 定时执行工作流平台数据源 start -->
+    <bean id="GongzuoliuMSService" class="com.cdc.inter.client.db.sqlserver.GongzuoliuMSService" />
+	<bean id="GongzuoliuMSServiceJob" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="GongzuoliuMSService" />
+		<property name="targetMethod" value="main" />		
+	</bean>
+	<bean id="GongzuoliuMSServiceTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail" ref="GongzuoliuMSServiceJob" />
+		<!-- 定义触发的时间 -->
+		<property name="cronExpression">
+			<value>0 0/1 * * * ?</value>
+		</property>
+	</bean>
+	<!-- 定时执行工作流平台数据源 end -->	
+	
+    <!-- 定时执行仓储系统数据源 start -->
+    <bean id="CangkuMSService" class="com.cdc.inter.client.db.sqlserver.CangkuMSService" />
+	<bean id="CangkuMSServiceJob" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="CangkuMSService" />
+		<property name="targetMethod" value="main" />		
+	</bean>
+	<bean id="CangkuMSServiceTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail" ref="CangkuMSServiceJob" />
+		<!-- 定义触发的时间 -->
+		<property name="cronExpression">
+			<value>0 0/1 * * * ?</value>
+		</property>
+	</bean>
+	<!-- 定时执行仓储系统数据源 end -->
+	
+    <!-- 定时执行工程文档过期预警 start -->
+    <bean id="GcUtils" class="com.cdc.dc.project.GcUtils" />
+	<bean id="GcUtilsJob" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="GcUtils" />
+		<property name="targetMethod" value="main" />		
+	</bean>
+	<bean id="GcUtilsTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail" ref="GcUtilsJob" />
+		<property name="cronExpression">
+			<value>0 30 9 * * ?</value>
+		</property>
+	</bean>
+	<!-- 定时执行工程文档过期预警 end -->			
+	
+	<!-- 配置定时任务，用于初始化定时器 start -->
+	<bean id="InitTask" class="com.cdc.dc.datacenter.task.job.InitTaskJob"/>
+	<bean id="InitTaskJob" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="InitTask" />
+		<property name="targetMethod" value="initJobTrigger" />
+		<property name="concurrent" value="false" />
+	</bean>
+	<!-- 只执行一次后即被禁用 -->
+	<bean id="InitTaskTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail" ref="InitTaskJob" />
+		<property name="cronExpression">
+			<value>* * * * * ?</value>
+		</property>
+	</bean>
+	<!-- 配置定时任务，用于初始化定时器 end -->	
+	
+	<!-- 定时同步南基物业管理平台数据 start -->
+	<bean id="syncDivsionTask" class="com.cdc.dc.divsion.task.SyncDivsionTask">
+		<property name="divsionService">
+			<ref bean="divsionService" />
+		</property>	
+	</bean>
+	<bean id="syncDivsionTaskJob" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="syncDivsionTask" />
+		<property name="targetMethod" value="syncDivsion" />
+		<property name="concurrent" value="false" />
+	</bean>
+	<bean id="syncDivsionTaskTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail" ref="syncDivsionTaskJob" />
+		<property name="cronExpression">
+			<value>0 4 11 * * ?</value>
+		</property>
+	</bean>
+	<!-- 定时同步南基物业管理平台数据 end -->	
+</beans>

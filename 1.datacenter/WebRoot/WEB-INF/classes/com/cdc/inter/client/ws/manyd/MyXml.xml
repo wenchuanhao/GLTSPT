@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<item>
+		<head>
+			<node name="课程名称">专家梦工场《FC-引导式顾问》培训</node>
+			<node name="日期">2017-01-13 00:00:00.0</node>
+			<node name="问卷数量">22</node>
+			<node name="序号">1</node>
+			<node name="宾客姓名">陈东翔</node>
+			<node name="房号">1201</node>
+			<node name="客房类型"></node>
+		</head>
+		<body>
+			<node name="服务项目和设施设备" parent="康乐">11</node>
+			<node name="卫生质量（毛巾、场地和设备清洁度）" parent="康乐">12</node>
+			<node name="服务品质（服务热情主动及时、服务过程规范）" parent="康乐">13</node>
+			<node name="服务主动、语言规范、微笑答疑" parent="安保">21</node>
+			<node name="车辆指引及班车接送服务" parent="安保">22</node>
+			<node name="电话咨询及电瓶车调度服务" parent="前台礼宾">31</node>
+			<node name="微笑服务、微笑答疑" parent="前台礼宾">32</node>
+			<node name="空调及房间温度" parent="客房">41</node>
+			<node name="灯光及房间设备" parent="客房">42</node>
+			<node name="客房清洁度（卧具、沙发、地毯、日常清洁迅速及时）" parent="客房">43</node>
+			<node name="浴室用品（毛巾、洗护用品、洗浴设备、水温）" parent="客房">44</node>
+			<node name="客房异味" parent="客房">45</node>
+			<node name="客房网络质量" parent="客房">46</node>
+			<node name="服务品质（服务热情主动及时、服务过程规范）" parent="客房">47</node>
+			<node name="用餐环境（场地、餐具卫生洁净）" parent="餐饮">51</node>
+			<node name="食品品质（可选性、口味、质量）" parent="餐饮">52</node>
+			<node name="服务品质（微笑热情、主动及时）" parent="餐饮">53</node>
+			<node name="会议室温度" parent="会议">61</node>
+			<node name="灯光及设施设备（投影、唛、音响等）" parent="会议">62</node>
+			<node name="网络质量 " parent="会议">63</node>
+			<node name="茶歇质量（可选性、口味）" parent="会议">64</node>
+			<node name="服务品质（服务热情主动及时、服务过程规范）" parent="会议">65</node>
+		</body>
+	</item>
+</root>

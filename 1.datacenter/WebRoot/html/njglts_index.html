@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+	<head>
+		<meta charset="UTF-8">
+		<title>采购经分</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="author" content="duanliang, duanliang920.com" />
+		<link href="/SRMC/dc/purchase/h5/css/style.css" type="text/css" rel="stylesheet" />
+		<link rel="stylesheet" href="/SRMC/dc/purchase/h5/css/mobiscroll.android-ics-2.5.2.css" />
+		<link rel="stylesheet" href="/SRMC/dc/purchase/h5/css/mobiscroll.core-2.5.2.css" />
+		<script type="text/javascript" src="/SRMC/dc/bingoSSO/cordova.js"></script>
+		<script type="text/javascript" src="/SRMC/dc/bingoSSO/zepto.js"></script>
+		<script type="text/javascript" src="/SRMC/dc/bingoSSO/bingotouch.js"></script>
+		<script type="text/javascript" src="/SRMC/dc/bingoSSO/linkplugins.js"></script>
+		<script type="text/javascript" src="/SRMC/dc/purchase/h5/js/jquery-1.11.1.min.js"></script>
+		<script type="text/javascript" src="/SRMC/dc/purchase/h5/js/highcharts.js"></script>
+		<script type="text/javascript" src="/SRMC/dc/purchase/h5/js/jquery.mobile-1.4.5.min.js"></script>
+		<script type="text/javascript" src="/SRMC/dc/purchase/h5/js/mobiscroll.android-ics-2.5.2.js"></script>
+		<script type="text/javascript" src="/SRMC/dc/purchase/h5/js/mobiscroll.core-2.5.2.js"></script>
+		<script type="text/javascript" src="/SRMC/dc/purchase/h5/js/mobiscroll.core-2.5.2-zh.js"></script>
+		<script type="text/javascript" src="/SRMC/dc/purchase/h5/js/mobiscroll.datetime-2.5.1.js"></script>
+		<script type="text/javascript" src="/SRMC/dc/purchase/h5/js/mobiscroll.datetime-2.5.1-zh.js"></script>
+		<script>
+		var loginId = "";
+		app.page.onLoad = function() {
+			document.addEventListener("backbutton", function() {
+				app.exit();
+			}, false);
+	    	app.link.getLoginInfo(function(userInfo){
+				loginId = userInfo.loginId;
+				init();
+			});
+		}
+		
+		function init(){
+			$.ajax({
+				type:"post",
+				async:true,
+				url: "http://221.176.36.63/purchase/h5/purchaseHome?loginId="+loginId,
+				data: $("#pageFormH5").serialize(),
+				dataType:"html",
+				success:function(data){
+					if(data != ""){
+						$("#purchaseHome").html(data);
+						$("#loginId").val(loginId);
+						var currYear = (new Date()).getFullYear();
+						var opt = {};
+						opt.date = {
+							preset: 'date'
+						};
+						opt.datetime = {
+							preset: 'datetime'
+						};
+						opt.time = {
+							preset: 'time'
+						};
+						opt.default = {
+							theme: 'android-ics light', //皮肤样式
+							display: 'modal', //显示方式 
+							mode: 'scroller', //日期选择模式
+							dateFormat: 'yy-mm-dd',
+							lang: 'zh',
+							startYear: currYear - 10, //开始年份
+							endYear: currYear + 10 //结束年份
+						};   
+						$(".adate").scroller('destroy').scroller($.extend(opt['date'], opt['default']));
+						var optDateTime = $.extend(opt['datetime'], opt['default']);
+						var optTime = $.extend(opt['time'], opt['default']);
+						$("#appDateTime").mobiscroll(optDateTime).datetime(optDateTime);
+						$("#appTime").mobiscroll(optTime).time(optTime);
+						
+						//饼状图
+						initContainerForPie('#container01','container01');
+						initContainerForPie('#container02','container02');
+						initContainerForPie('#container03','container03');
+						initContainerForPie('#container09','container09');
+						initContainerForPie('#container10','container10');
+						 
+						//柱状图
+						initContainerForTimeColumn('#container04','container04');
+						initContainerForTimeColumn('#container05','container05');
+						initContainerForTimeColumn('#container06','container06');
+						initContainerForTimeColumn('#container07','container07');
+					    initContainerForTimeColumn('#container08','container08');
+					    initContainerForTimeColumn('#container11','container11');
+					}
+				},
+				error:function(){alert("加载失败");}
+			});				
+		}
+	</script>
+	
+	</head>
+	<body id="purchaseHome">正在加载图表中...</body>
+</html>

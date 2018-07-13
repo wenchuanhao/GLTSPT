@@ -1,0 +1,9 @@
+eclipse.preferences.version=1
+encoding//WebRoot/MyJsp.jsp=UTF-8
+encoding//WebRoot/WEB-INF/templates/import/simple.ftl=UTF-8
+encoding//WebRoot/WEB-INF/views/sys/user/addSysUser.jsp=UTF-8
+encoding//WebRoot/WEB-INF/views/sys/worksheet/opTypeRight.jsp=UTF-8
+encoding//etc/dc.properties=UTF-8
+encoding//etc/jdbc/oracle.properties=UTF-8
+encoding//src/log4j.properties=UTF-8
+encoding/<project>=UTF-8

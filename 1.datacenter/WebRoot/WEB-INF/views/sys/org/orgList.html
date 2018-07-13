@@ -1,0 +1,241 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<link type="text/css"  href="/SRMC/dc/css/rewrite.css" rel="stylesheet" />
+<script type="text/javascript" src="/SRMC/rmpb/js/tree01.js"></script>
+
+<script type="text/javascript" src="/SRMC/dc/js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="/SRMC/rmpb/js/js.js"></script>
+<script src="/SRMC/rmpb/js/Checkable.js" type="text/javascript"></script>
+</head>
+
+<body class="bg_c">
+           <div class="gl_m_r_nav">当前位置 : 系统管理 > 组织管理 > 管理组织</div>
+           <table class="gl_m_r_n_tb01"  border="0" cellspacing="0" cellpadding="0">
+             <tr>
+             <td width="260" valign="top">
+               
+               <div class="gl_bt_bnt01">组织架构</div>
+              
+               <div class="gl_bnt_tree01">
+                 <div class="gl_bnt_tree02">
+                   <table  class="gl_bnt_tree03" border="0" cellspacing="0" cellpadding="0">
+                     <tr>
+                     <td><a href="#"><img src="../images/gl_tab_b01.gif" width="25" height="25" /></a></td>
+                     <td><a href="#"><img src="../images/gl_tab_b02.gif" width="25" height="25" /></a></td>
+                     <td width="30"></td>
+                     <td><a href="#"><img src="../images/gl_tab_b03.gif" width="25" height="25" /></a></td>
+                     <td><a href="#"><img src="../images/gl_tab_b04.gif" width="25" height="25" /></a></td>
+                     </tr>
+                   </table>
+                 </div>
+                 <!--tree-->
+                 <table border="0" cellpadding="0" cellspacing="0"  class="tab01">
+  <tr >
+    <td class="td01" onClick="showsubmenu(submenuboard1,subimgboard1,'folderopen.gif','folder.gif')">
+    <table class="tab02" cellspacing="0" cellpadding="0" width="100%" border="0">
+      <tr>
+        <td width="30"><img  src="../images/left_fold1.gif"  name="subimg" width="30" height="33" id="subimgboard1" /></td>
+        <td>第三方厂家</td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td style="display:none;" id='submenuboard1' class="td01"><table class="tab03" width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+      <tr>
+        <td><a href="#">案例1</a></td>
+      </tr>
+      <tr>
+        <td><a href="#">案例2</a></td>
+      </tr>
+      <tr>
+        <td><a href="#">案例3</a></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td width="100%"   class="td01" onClick="showsubmenu(submenuboard2,subimgboard2,'folderopen.gif','folder.gif')">
+    <table class="tab02" cellspacing="0" cellpadding="0" width="100%" border="0">
+      <tr>
+        <td width="30" height="33"><img  src="../images/left_fold1.gif" name="subimg" width="30" height="33" id="subimgboard2" /></td>
+        <td>业务运营中心</td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td style="display:none" id='submenuboard2'  class="td01"><table class="tab03" width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+      <tr>
+        <td><a href="#">案例1</a></td>
+      </tr>
+      <tr>
+        <td><a href="#">案例2</a></td>
+      </tr>
+      <tr>
+        <td><a href="#">案例3</a></td>
+      </tr>
+    </table>
+      <table border="0" align="center" cellpadding="0" cellspacing="0" class="tab01b">
+        <tr >
+          <td width="100%" height="35" onClick="showsubmenu(submenuboard_a,subimgboard_a,'folderopen.gif','folder.gif')">
+          <table class="tab02b" cellspacing="0" cellpadding="0" width="100%" border="0">
+            <tr>
+              <td width="31"><img  src="../images/left_fold1.gif"  name="subimg" width="30" height="33" id="subimgboard_a" /></td>
+              <td >MM运营中心</td>
+            </tr>
+          </table></td>
+        </tr>
+        <tr>
+          <td style="display:none;" id='submenuboard_a'><table class="tab03" width="100%" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+              <td><a href="#">A线</a></td>
+            </tr>
+            <tr>
+              <td><a href="#">B线</a></td>
+            </tr>
+            <tr>
+              <td><a href="#">C线</a></td>
+            </tr>
+          </table></td>
+        </tr>
+      </table></td>
+  </tr>
+</table>
+<!--tree END-->                 
+               </div>
+             </td>
+             <td width="18" valign="top" class="gl_m_r_n_tb01_m"></td>
+             <td valign="top">
+             
+               <div class="gl_bt_bnt02">
+               <input name="" type="button" class="gl_cx_bnt02" value="默认项目" />
+               <input name="" type="button" class="gl_cx_bnt01b" value="收起查询" />
+               查询</div>
+               
+               <table class="gl_table_a01" width="100%" border="0" cellspacing="0" cellpadding="0">
+               <tr>
+                 <td width="480">组织名称：
+                   <input class="gl_text01b" type="text" name="textfield" id="textfield" />
+                   
+                 </td>
+                 <td><input name="" type="button" class="gl_cx_bnt01c" value="搜 索" /></td>
+                 </tr>
+               </table>
+               <div class="ge_a01"></div>
+               
+               <div class="gl_bt_bnt01">组织机构列表</div>
+               
+               <div class="gl_bnt_nav01" style="border-bottom:none;">
+                 <input name="" type="button" class="gl_cx_bnt04" value="新 增" />
+                 <input name="" type="button" class="gl_cx_bnt04" value="删 除" />
+               </div>
+             
+               <table class="gl_table_a02" width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                <th width="32"><input type="checkbox" class="myClass" value="yes" id="Checkbox1" name="answer"/></th>
+                <th>子系统</th>
+                <th>上级组织</th>
+                <th width="60">排序</th>
+                <th width="160">操作</th>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" class="myClass" value="yes" id="Checkbox5" name="Checkbox3"/></td>
+                  <td>第三方厂家<br /></td>
+                  <td>ROOT</td>
+                  <td><span class="gl_tab_tr_l"><img src="../images/tab_tb02.png"/></span><span class="gl_tab_tr_l"><img src="../images/tab_tb05.png"/></span></td>
+                  <td><span class="gl_tab_tr_l"><img src="../images/tab_tb01.png"/></span><span class="gl_tab_tr_r"><a href="#">查看</a></span> <span class="gl_tab_tr_l"><img src="../images/tab_tb06.png"/></span><span class="gl_tab_tr_r"><a href="#">编辑</a></span> <span class="gl_tab_tr_l"><img src="../images/tab_tb07.png"/></span><span class="gl_tab_tr_r"><a href="#">删除</a></span></td>
+                </tr>
+                <tr class="tab_c_tr01">
+                  <td><input type="checkbox" class="myClass" value="yes" id="Checkbox4" name="Checkbox3"/></td>
+                  <td>第三方厂家</td>
+                  <td>ROOT</td>
+                  <td><span class="gl_tab_tr_l"><img src="../images/tab_tb03.png"/></span><span class="gl_tab_tr_l"><img src="../images/tab_tb05.png"/></span></td>
+                  <td><span class="gl_tab_tr_l"><img src="../images/tab_tb01.png"/></span><span class="gl_tab_tr_r"><a href="#">查看</a></span> <span class="gl_tab_tr_l"><img src="../images/tab_tb06.png"/></span><span class="gl_tab_tr_r"><a href="#">编辑</a></span> <span class="gl_tab_tr_l"><img src="../images/tab_tb07.png"/></span><span class="gl_tab_tr_r"><a href="#">删除</a></span></td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" class="myClass" value="yes" id="Checkbox7" name="Checkbox3"/></td>
+                  <td>第三方厂家<br /></td>
+                  <td>ROOT</td>
+                  <td><span class="gl_tab_tr_l"><img src="../images/tab_tb03.png"/></span><span class="gl_tab_tr_l"><img src="../images/tab_tb04.png"/></span></td>
+                  <td><span class="gl_tab_tr_l"><img src="../images/tab_tb01.png"/></span><span class="gl_tab_tr_r"><a href="#">查看</a></span> <span class="gl_tab_tr_l"><img src="../images/tab_tb06.png"/></span><span class="gl_tab_tr_r"><a href="#">编辑</a></span> <span class="gl_tab_tr_l"><img src="../images/tab_tb07.png"/></span><span class="gl_tab_tr_r"><a href="#">删除</a></span></td>
+                </tr>
+                <tr class="tab_c_tr01">
+                  <td><input type="checkbox" class="myClass" value="yes" id="Checkbox6" name="Checkbox3"/></td>
+                  <td>第三方厂家</td>
+                  <td>ROOT</td>
+                  <td><span class="gl_tab_tr_l"><img src="../images/tab_tb03.png"/></span><span class="gl_tab_tr_l"><img src="../images/tab_tb05.png"/></span></td>
+                  <td><span class="gl_tab_tr_l"><img src="../images/tab_tb01.png"/></span><span class="gl_tab_tr_r"><a href="#">查看</a></span> <span class="gl_tab_tr_l"><img src="../images/tab_tb06.png"/></span><span class="gl_tab_tr_r"><a href="#">编辑</a></span> <span class="gl_tab_tr_l"><img src="../images/tab_tb07.png"/></span><span class="gl_tab_tr_r"><a href="#">删除</a></span></td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" class="myClass" value="yes" id="Checkbox9" name="Checkbox3"/></td>
+                  <td>第三方厂家<br /></td>
+                  <td>ROOT</td>
+                  <td><span class="gl_tab_tr_l"><img src="../images/tab_tb03.png"/></span><span class="gl_tab_tr_l"><img src="../images/tab_tb05.png"/></span></td>
+                  <td><span class="gl_tab_tr_l"><img src="../images/tab_tb01.png"/></span><span class="gl_tab_tr_r"><a href="#">查看</a></span> <span class="gl_tab_tr_l"><img src="../images/tab_tb06.png"/></span><span class="gl_tab_tr_r"><a href="#">编辑</a></span> <span class="gl_tab_tr_l"><img src="../images/tab_tb07.png"/></span><span class="gl_tab_tr_r"><a href="#">删除</a></span></td>
+                </tr>
+                <tr class="tab_c_tr01">
+                  <td><input type="checkbox" class="myClass" value="yes" id="Checkbox8" name="Checkbox3"/></td>
+                  <td>第三方厂家</td>
+                  <td>ROOT</td>
+                  <td><span class="gl_tab_tr_l"><img src="../images/tab_tb03.png"/></span><span class="gl_tab_tr_l"><img src="../images/tab_tb05.png"/></span></td>
+                  <td><span class="gl_tab_tr_l"><img src="../images/tab_tb01.png"/></span><span class="gl_tab_tr_r"><a href="#">查看</a></span> <span class="gl_tab_tr_l"><img src="../images/tab_tb06.png"/></span><span class="gl_tab_tr_r"><a href="#">编辑</a></span> <span class="gl_tab_tr_l"><img src="../images/tab_tb07.png"/></span><span class="gl_tab_tr_r"><a href="#">删除</a></span></td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" class="myClass" value="yes" id="Checkbox11" name="Checkbox3"/></td>
+                  <td>第三方厂家<br /></td>
+                  <td>ROOT</td>
+                  <td><span class="gl_tab_tr_l"><img src="../images/tab_tb03.png"/></span><span class="gl_tab_tr_l"><img src="../images/tab_tb05.png"/></span></td>
+                  <td><span class="gl_tab_tr_l"><img src="../images/tab_tb01.png"/></span><span class="gl_tab_tr_r"><a href="#">查看</a></span> <span class="gl_tab_tr_l"><img src="../images/tab_tb06.png"/></span><span class="gl_tab_tr_r"><a href="#">编辑</a></span> <span class="gl_tab_tr_l"><img src="../images/tab_tb07.png"/></span><span class="gl_tab_tr_r"><a href="#">删除</a></span></td>
+                </tr>
+                <tr class="tab_c_tr01">
+                  <td><input type="checkbox" class="myClass" value="yes" id="Checkbox10" name="Checkbox3"/></td>
+                  <td>第三方厂家</td>
+                  <td>ROOT</td>
+                  <td><span class="gl_tab_tr_l"><img src="../images/tab_tb03.png"/></span><span class="gl_tab_tr_l"><img src="../images/tab_tb05.png"/></span></td>
+                  <td><span class="gl_tab_tr_l"><img src="../images/tab_tb01.png"/></span><span class="gl_tab_tr_r"><a href="#">查看</a></span> <span class="gl_tab_tr_l"><img src="../images/tab_tb06.png"/></span><span class="gl_tab_tr_r"><a href="#">编辑</a></span> <span class="gl_tab_tr_l"><img src="../images/tab_tb07.png"/></span><span class="gl_tab_tr_r"><a href="#">删除</a></span></td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" class="myClass" value="yes" id="Checkbox13" name="Checkbox3"/></td>
+                  <td>第三方厂家<br /></td>
+                  <td>ROOT</td>
+                  <td><span class="gl_tab_tr_l"><img src="../images/tab_tb03.png"/></span><span class="gl_tab_tr_l"><img src="../images/tab_tb05.png"/></span></td>
+                  <td><span class="gl_tab_tr_l"><img src="../images/tab_tb01.png"/></span><span class="gl_tab_tr_r"><a href="#">查看</a></span> <span class="gl_tab_tr_l"><img src="../images/tab_tb06.png"/></span><span class="gl_tab_tr_r"><a href="#">编辑</a></span> <span class="gl_tab_tr_l"><img src="../images/tab_tb07.png"/></span><span class="gl_tab_tr_r"><a href="#">删除</a></span></td>
+                </tr>
+                <tr class="tab_c_tr01">
+                  <td><input type="checkbox" class="myClass" value="yes" id="Checkbox12" name="Checkbox3"/></td>
+                  <td>第三方厂家</td>
+                  <td>ROOT</td>
+                  <td><span class="gl_tab_tr_l"><img src="../images/tab_tb03.png"/></span><span class="gl_tab_tr_l"><img src="../images/tab_tb05.png"/></span></td>
+                  <td><span class="gl_tab_tr_l"><img src="../images/tab_tb01.png"/></span><span class="gl_tab_tr_r"><a href="#">查看</a></span> <span class="gl_tab_tr_l"><img src="../images/tab_tb06.png"/></span><span class="gl_tab_tr_r"><a href="#">编辑</a></span> <span class="gl_tab_tr_l"><img src="../images/tab_tb07.png"/></span><span class="gl_tab_tr_r"><a href="#">删除</a></span></td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" class="myClass" value="yes" id="Checkbox2" name="Checkbox1"/></td>
+                  <td>第三方厂家<br /></td>
+                  <td>ROOT</td>
+                  <td><span class="gl_tab_tr_l"><img src="../images/tab_tb03.png"/></span><span class="gl_tab_tr_l"><img src="../images/tab_tb05.png"/></span></td>
+                  <td><span class="gl_tab_tr_l"><img src="../images/tab_tb01.png"/></span><span class="gl_tab_tr_r"><a href="#">查看</a></span>
+                  <span class="gl_tab_tr_l"><img src="../images/tab_tb06.png"/></span><span class="gl_tab_tr_r"><a href="#">编辑</a></span>
+                  <span class="gl_tab_tr_l"><img src="../images/tab_tb07.png"/></span><span class="gl_tab_tr_r"><a href="#">删除</a></span>
+                  </td>
+                  </tr>
+                <tr class="tab_c_tr01">
+                  <td><input type="checkbox" class="myClass" value="yes" id="Checkbox3" name="Checkbox2"/></td>
+                  <td>第三方厂家</td>
+                  <td>ROOT</td>
+                  <td><span class="gl_tab_tr_l"><img src="../images/tab_tb03.png"/></span><span class="gl_tab_tr_l"><img src="../images/tab_tb05.png"/></span></td>
+                  <td><span class="gl_tab_tr_l"><img src="../images/tab_tb01.png"/></span><span class="gl_tab_tr_r"><a href="#">查看</a></span>
+                  <span class="gl_tab_tr_l"><img src="../images/tab_tb06.png"/></span><span class="gl_tab_tr_r"><a href="#">编辑</a></span>
+                  <span class="gl_tab_tr_l"><img src="../images/tab_tb07.png"/></span><span class="gl_tab_tr_r"><a href="#">删除</a></span>
+                  </td>
+                  </tr>
+               </table>
+               
+               <div class="pageBox">
+                  <div class="page"><a href="#" class="next">下一页</a><a href="#">6</a><a href="#">5</a><a href="#">4</a><a href="#">3</a><a href="#">2</a><a href="#" class="current">1</a><a href="#" class="prev">上一页</a> <span class="pageBox_font">页</span><a href="#" class="current2">50</a><a href="#">20</a><a href="#">10</a><span class="pageBox_font">每页显示:</span></div>
+                </div></td>
+             </tr>
+           </table>
+</body>
+</html>

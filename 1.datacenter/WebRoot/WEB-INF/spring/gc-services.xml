@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING/DTD BEAN/EN"
+ "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans default-lazy-init="false">
+	<description>工程管理服务</description>
+    
+    <!--工程建设 -->
+	<bean id="jsxmService" class="com.cdc.dc.project.jsxm.service.impl.JsxmServiceImpl">
+		<property name="enterpriseService">
+			<ref bean="enterpriseService" />
+		</property>
+	</bean>
+    
+    <!--投资编码 -->
+	<bean id="tzbmService" class="com.cdc.dc.project.tzbm.service.impl.TzbmServiceImpl">
+		<property name="enterpriseService">
+			<ref bean="enterpriseService" />
+		</property>
+	</bean>	
+    
+    <!--子项目 -->
+	<bean id="zxmService" class="com.cdc.dc.project.zxm.service.impl.ZxmServiceImpl">
+		<property name="enterpriseService">
+			<ref bean="enterpriseService" />
+		</property>
+	</bean>
+    
+    <!--子项目合同 -->
+	<bean id="zxmHtService" class="com.cdc.dc.project.zxmht.service.impl.ZxmHtServiceImpl">
+		<property name="enterpriseService">
+			<ref bean="enterpriseService" />
+		</property>
+	</bean>
+    
+    <!--合同开支 -->
+	<bean id="htKzService" class="com.cdc.dc.project.zxmht.service.impl.HtKzServiceImpl">
+		<property name="enterpriseService">
+			<ref bean="enterpriseService" />
+		</property>
+	</bean>				
+    
+    <!--周报管理 -->
+	<bean id="zbService" class="com.cdc.dc.project.zb.service.impl.ZbServiceImpl">
+		<property name="enterpriseService">
+			<ref bean="enterpriseService" />
+		</property>
+	</bean>
+	
+    <!--工程附件 -->
+	<bean id="gcAttachService" class="com.cdc.dc.project.attach.service.impl.GcAttachServiceImpl">
+		<property name="enterpriseService">
+			<ref bean="enterpriseService" />
+		</property>
+	</bean>	
+					
+    <!--风险库管理 -->
+	<bean id="fxkService" class="com.cdc.dc.project.fxk.service.impl.FxkServiceImpl">
+		<property name="enterpriseService">
+			<ref bean="enterpriseService" />
+		</property>
+	</bean>
+	
+    <!--工程指令管理 -->
+	<bean id="commandService" class="com.cdc.dc.command.manage.service.impl.CommandServiceImpl">
+		<property name="enterpriseService">
+			<ref bean="enterpriseService" />
+		</property>
+	</bean>
+	
+	<!--工程指令A1指令 -->
+	<bean id="zla1Service" class="com.cdc.dc.command.zla1.service.impl.Zla1ServiceImpl">
+		<property name="enterpriseService">
+			<ref bean="enterpriseService" />
+		</property>
+	</bean>
+	
+    <!--工程指令C指令 -->
+	<bean id="zlcService" class="com.cdc.dc.command.zlc.service.impl.ZlcServiceImpl">
+		<property name="enterpriseService">
+			<ref bean="enterpriseService" />
+		</property>
+	</bean>
+	
+	<!--监理造价类请款 -->
+	<bean id="jlqkService" class="com.cdc.dc.command.jlqk.service.impl.JlqkServiceImpl">
+		<property name="enterpriseService">
+			<ref bean="enterpriseService" />
+		</property>
+	</bean>
+	<!--材料设备类请款 -->
+	<bean id="clqkService" class="com.cdc.dc.command.clqk.service.impl.ClqkServiceImpl">
+		<property name="enterpriseService">
+			<ref bean="enterpriseService" />
+		</property>
+	</bean>
+	<!--设计专家类请款 -->
+	<bean id="sjqkService" class="com.cdc.dc.command.sjqk.service.impl.SjqkServiceImpl">
+		<property name="enterpriseService">
+			<ref bean="enterpriseService" />
+		</property>
+	</bean>
+	<!--施工过程资料指令 -->
+	<bean id="sgMaterialService" class="com.cdc.dc.command.sgmaterial.service.impl.SgMaterialServiceImpl">
+		<property name="enterpriseService">
+			<ref bean="enterpriseService" />
+		</property>
+	</bean>
+	<!--工程指令a2指令 -->
+	<bean id="zla2Service" class="com.cdc.dc.command.zla2.service.impl.Zla2ServiceImpl">
+		<property name="enterpriseService">
+			<ref bean="enterpriseService" />
+		</property>
+	</bean>
+
+	<!--工程指令B指令 -->
+	<bean id="zlbService" class="com.cdc.dc.command.zlb.service.impl.ZlbServiceImpl">
+		<property name="enterpriseService">
+			<ref bean="enterpriseService" />
+		</property>
+	</bean>
+	<!--工程指令施工请款类指令 -->
+	<bean id="zlbuildService" class="com.cdc.dc.command.zlbuild.service.impl.ZlbuildServiceImpl">
+		<property name="enterpriseService">
+			<ref bean="enterpriseService" />
+		</property>
+	</bean>
+	<!--工程指令检测勘察请款类指令 -->
+	<bean id="zlcheckService" class="com.cdc.dc.command.zlcheck.service.impl.ZlcheckServiceImpl">
+		<property name="enterpriseService">
+			<ref bean="enterpriseService" />
+		</property>
+	</bean>
+	
+    <!--工程指令支撑单位配置 -->
+	<bean id="supportService" class="com.cdc.dc.command.support.service.impl.SupportServiceImpl">
+		<property name="enterpriseService">
+			<ref bean="enterpriseService" />
+		</property>
+	</bean>
+</beans>

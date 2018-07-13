@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd"
+       default-lazy-init="true">
+
+    <description>cmcc cxf webservice服务接口</description>
+
+    <!-- 单点登录接口 -->
+    <bean id="ssologinClient" class="com.cmcc.webservice.ssologininsrv.SsologinClient"
+            init-method="init">
+        <property name="sBIAPSSOLoginInSrv_Service">
+            <bean class="com.cmcc.csb.sb_iap_ssologininsrv.SBIAPSSOLoginInSrv_Service"/>
+        </property>
+    </bean>
+    
+    
+     <!-- 令牌校验服务接口 -->
+    <bean id="checkTokenClient" class="com.cmcc.webservice.checktokenkeyinsrv.CheckTokenClient"
+            init-method="init">
+        <property name="sBIAPCheckTokenKeyInSrv_Service">
+            <bean class="com.cmcc.csb.sb_iap_checktokenkeyinsrv.SBIAPCheckTokenKeyInSrv_Service"/>
+        </property>
+    </bean>
+    
+    
+    <!-- 目录同步接口 -->
+    <bean id="ouInfoClient" class="com.cmcc.webservice.inquiryouinfosrv.OuInfoClient"
+            init-method="init">
+        <property name="sBIAPInquiryOUInfoSrv_Service">
+            <bean class="com.cmcc.csb.sb_iap_inquiryouinfosrv.SBIAPInquiryOUInfoSrv_Service"/>
+        </property>
+    </bean>
+    
+    <!-- 人员基本信息同步接口 -->
+    <bean id="inquiryUserInfoClient" class="com.cmcc.webservice.pageinquiryuserinfosrv.InquiryUserInfoClient"
+            init-method="init">
+        <property name="sBIAPPageInquiryUserInfoSrv_Service">
+            <bean class="com.cmcc.csb.sb_iap_pageinquiryuserinfosrv.SBIAPPageInquiryUserInfoSrv_Service"/>
+        </property>
+    </bean>
+    
+    <!-- 代办待阅推送接口 -->
+    <bean id="manageTaskClient" class="com.cmcc.webservice.managertasktodosrv.ManageTaskClient"
+            init-method="init">
+        <property name="sBIAPManagerTaskToDoSrv_Service">
+            <bean class="com.cmcc.csb.sb_iap_managertasktodosrv.SBIAPManagerTaskToDoSrv_Service"/>
+        </property>
+    </bean>
+    
+     <!-- 查询用户组织接口 -->
+    <!-- <bean id="importUserGroupClient" class="com.cmcc.webservice.importusergrouprsrv.ImportUserGroupClient"
+            init-method="init">
+        <property name="sBIAPImportUserGroupRSrv_Service">
+            <bean class="com.cmcc.csb.sb_iap_importusergrouprsrv.SBIAPImportUserGroupRSrv_Service"/>
+        </property>
+    </bean> -->
+    
+    <!-- 发送短信服务接口 -->
+    <bean id="sendSmsinfoClient" class="com.cmcc.webservice.sendsmsinfosrv.SendSmsinfoClient">
+    </bean>
+     <!--发送短信服务接口封装 -->
+	<bean id="smsService" class="com.cdc.inter.client.ws.sms.service.impl.SmsServiceImpl">
+		<property name="enterpriseService">
+			<ref bean="enterpriseService" />
+		</property>
+   		<property name="sendSmsinfoClient">
+  			<ref bean="sendSmsinfoClient" />
+  		</property>
+	</bean>	
+	
+	<bean id="sendMailInfoClient" class="com.cmcc.webservice.sendmailinfosrv.SendMailInfoClient"></bean>	
+	<bean id="mailService" class="com.cdc.inter.client.ws.mail.service.impl.IMailServiceImpl">
+		<property name="enterpriseService">
+			<ref bean="enterpriseService" />
+		</property>
+   		<property name="sendMailInfoClient">
+  			<ref bean="sendMailInfoClient" />
+  		</property>
+	</bean>	
+	
+	<!--邮件发送历史查询  -->
+	<bean id="emailSendedLogService" class="com.cdc.inter.client.ws.mail.service.impl.EmailSendedLogServiceImpl">
+		<property name="enterpriseService">
+			<ref bean="enterpriseService" />
+		</property>
+	</bean>
+</beans>

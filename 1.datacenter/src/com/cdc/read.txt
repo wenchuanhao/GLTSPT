@@ -1,0 +1,18 @@
+
+                                                                       代码结构：
+
+一、adapter(适配管理相关代码)
+     
+二、developFlowManage(研发流程管理相关代码)
+
+三、flow(系统管理业务配置下相关代码)
+
+四、promanager(项目管理相关代码)
+
+五、sms(短信管理相关代码)
+
+六、sys(系统管理相关代码)
+
+七、workordermanager(故障管理相关代码)
+
+八、jbpm(流程公共变量相关代码)

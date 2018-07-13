@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING/DTD BEAN/EN"
+ "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans default-lazy-init="false">
+	<description>数据中心服务</description>
+	<bean id="datacenterService" class="com.cdc.dc.datacenter.task.service.impl.DatacenterServiceImpl">
+		<property name="enterpriseService">
+			<ref bean="enterpriseService" />
+		</property>
+	</bean>
+</beans>
