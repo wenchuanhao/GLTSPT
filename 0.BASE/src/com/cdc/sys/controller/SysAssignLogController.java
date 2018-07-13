@@ -1,0 +1,37 @@
+package com.cdc.sys.controller;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.trustel.system.SystemConstant;
+
+import com.cdc.sys.form.SysLogForm;
+import com.cdc.sys.service.ISysLogService;
+import com.trustel.common.ItemPage;
+
+@Controller
+@RequestMapping(value = "/sys/log/*")
+public class SysAssignLogController {
+	@Autowired
+	private ISysLogService sysLogService;
+	/**
+	 * 用户分配日记
+	 * @param request
+	 * @param form
+	 * @return
+	 */
+	@RequestMapping(value = "assignLog", method = { RequestMethod.GET, RequestMethod.POST })
+	public String assignLog(HttpServletRequest request, SysLogForm form) {
+		try {
+			ItemPage itemPage = sysLogService.query(form,"4");
+			request.setAttribute(SystemConstant.ATTRIBUTE_ITEMPAGE, itemPage);
+			request.setAttribute("form", form);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return "sys/log/queryAssignLog";
+	}
+}

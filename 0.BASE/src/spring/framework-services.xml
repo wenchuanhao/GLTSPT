@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING/DTD BEAN/EN"
+ "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans default-lazy-init="false">
+	<description>Spring Defines--WANZY Common Framework</description>
+
+	<!-- 通用数据存取服务 -->
+	<bean id="enterpriseService" class="org.trustel.service.EnterpriseService"
+		scope="prototype">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+		<!-- 默认最多返回10000条记录 -->
+		<!-- <property name="maxresults" value="1000" /> -->
+	</bean>
+
+	<!-- 缺省系统登录管理服务 -->
+	<bean id="defaultLoginService" class="com.cdc.sys.service.DefaultLoginService">
+		<property name="enterpriseService">
+			<ref bean="enterpriseService" />
+		</property>
+	</bean>
+
+	<!-- 模块权限管理服务 -->
+	<bean id="startUpService" class="com.cdc.system.core.service.StartUpService">
+		<property name="enterpriseService">
+			<ref bean="enterpriseService" />
+		</property>
+	</bean>
+		<!-- 模块权限管理服务 -->
+	<bean id="defaultLoadService" class="com.cdc.system.core.startup.DefaultLoadService">
+		<property name="startUpService">
+			<ref bean="startUpService" />
+		</property>
+	</bean>
+     
+    
+     <!-- 异常处理类 -->
+    <bean id="exceptionLog" class="com.cdc.sys.service.ExceptionHandle">
+     	<property name="enterpriseService">
+			<ref bean="enterpriseService" />
+		</property>
+	</bean>
+	<!-- <bean name="defaultLoader" -->
+	<!-- class="org.trustel.scheduling.service.ConfigurationLoader"> -->
+	<!-- <property name="tasks"> -->
+	<!-- <list></list> -->
+	<!-- </property> -->
+	<!-- </bean> -->
+</beans>

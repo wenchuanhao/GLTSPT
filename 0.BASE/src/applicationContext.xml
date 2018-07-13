@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING/DTD BEAN/EN"
+ "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans default-lazy-init="false" default-autowire="byName">
+	<description>数据源及注入配置</description>
+	<!-- lib/base1.0.jar -->
+	<import resource="spring/hibernate-config.xml" />
+	<import resource="spring/framework-transaction.xml" />
+	<import resource="spring/framework-services.xml" />
+    <import resource="spring/system-services.xml" />
+</beans>

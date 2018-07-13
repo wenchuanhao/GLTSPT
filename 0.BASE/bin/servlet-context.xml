@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context-3.0.xsd
+http://www.springframework.org/schema/mvc
+http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd"
+	default-autowire="byName">
+	<mvc:annotation-driven />
+
+	<!-- 控制层所在的包 -->
+	<context:component-scan base-package="com.cdc" />
+	<context:component-scan base-package="com.trustel" />
+	<context:component-scan base-package="org.trustel" />
+
+	<mvc:interceptors>
+		<!-- 权限控制器 -->
+		<bean id="authentication"
+			class="com.cdc.system.core.authentication.interceptor.AuthenticationInterceptor">
+			<!-- 登录url -->
+			<property name="loginUrl" value="/core/toLogin/" />
+			<!-- 没有权限 -->
+			<property name="noprivilegeUrl" value="/public/tip/noprivilege.jsp" />
+		</bean>
+		
+		<!--  配置允许通过的后缀  -->
+		<bean
+			class="com.cdc.system.core.authentication.interceptor.IncludeSuffixnInterceptor">
+			<property name="excludeSuffixn">
+				<list>
+					<value>.html</value>
+					<value>.json</value>
+					<value>.\d{1,}</value>
+				</list>
+			</property>
+		</bean>
+		
+				<!--  过滤特殊自字符  不管用
+		<bean
+			class="com.cdc.system.core.authentication.interceptor.FormParamterInterceptor"/>
+		-->
+		
+		
+	</mvc:interceptors>
+
+	<!-- 静态资源访问配置 -->
+	<mvc:default-servlet-handler />
+	<mvc:resources location="/html/" mapping="/html/**"/>
+
+	<!-- 视图解析-->
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" >
+		<property name="prefix" value="/WEB-INF/views/" />
+		<property name="suffix" value=".jsp"/>
+		<property name="order" value="2" />
+	</bean>
+
+	<!-- 上传文件拦截，设置最大值 -->
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<!--byte (1024*3)*1024*1024 3G -->
+		<property name="maxUploadSize" value="3221225472" />
+	</bean>
+
+</beans>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.cdc.sys.serviceLog.model.ServiceRunLog" table="SERVICE_LOG" >
+    	<id name="id" type="java.lang.String">
+			<column length="40" name="ID" />
+			<generator class="com.trustel.id.UnIdGeneratorByDate" />
+		</id>
+    	<property name="type" type="java.lang.Integer">
+            <column name="type"  />
+        </property>
+        <property name="sendMessage" type="java.lang.String">
+            <column name="SEND_MESSAGE"  />
+        </property>
+        <property name="returnMessage" type="java.lang.String">
+            <column name="RETURN_MESSAGE"  />
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="status"  />
+        </property>
+        <property name="interType" type="java.lang.Integer">
+            <column name="INTER_TYPE"  />
+        </property>
+        <property name="createDate" type="java.util.Date">
+            <column name="CREATE_DATE" />
+        </property>
+        <property name="serviceId" type="java.lang.String">
+            <column name="SERVICE_ID"  />
+        </property>
+        <property name="dataId" type="java.lang.String">
+            <column name="data_id"  />
+        </property>
+  	</class>
+</hibernate-mapping>

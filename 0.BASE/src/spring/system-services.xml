@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING/DTD BEAN/EN"
+ "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans default-lazy-init="false">
+	<description>系统管理服务 sunsf</description>
+	<!-- 系统用户管理服务 -->
+
+	<!-- 用户管理服务 -->
+	<bean id="sysUserService" class="com.cdc.sys.service.SysUserService">
+		<property name="enterpriseService">
+			<ref bean="enterpriseService" />
+		</property>
+	</bean>
+	<!-- 角色设置 -->
+	<bean id="sysRoleSetService" class="com.cdc.sys.service.SysRoleSetService">
+		<property name="enterpriseService">
+			<ref bean="enterpriseService" />
+		</property>
+	</bean>
+	<!-- 用户角色设置 -->
+	<bean id="sysRoleUserService" class="com.cdc.sys.service.SysRoleUserService">
+		<property name="enterpriseService">
+			<ref bean="enterpriseService" />
+		</property>
+	</bean>
+	<!-- 用户区域设置 -->
+	<bean id="sysUserAreaService" class="com.cdc.sys.service.SysUserAreaService">
+		<property name="enterpriseService">
+			<ref bean="enterpriseService" />
+		</property>
+	</bean>
+	<!-- 模块管理服务 -->
+	<bean id="sysModuleService" class="com.cdc.sys.service.SysModuleService">
+		<property name="enterpriseService">
+			<ref bean="enterpriseService" />
+		</property>
+	</bean>
+	<!-- 角色组管理服务 -->
+	<bean id="roleGroupService" class="com.cdc.sys.service.SysRoleGroupService">
+		<property name="enterpriseService">
+			<ref bean="enterpriseService" />
+		</property>
+	</bean>
+	<!-- 角色管理服务 -->
+	<bean id="sysRoleService" class="com.cdc.sys.service.SysRoleService">
+		<property name="enterpriseService">
+			<ref bean="enterpriseService" />
+		</property>
+	</bean>
+	<!-- 组织机构管理服务 -->
+	<bean id="organizationService" class="com.cdc.sys.service.SysOrganizationService">
+		<property name="enterpriseService">
+			<ref bean="enterpriseService" />
+		</property>
+	</bean>
+	<!--参数设置管理服务 -->
+	<bean id="sysParameterService" class="com.cdc.sys.dict.service.impl.SysParameterServiceImpl">
+		<property name="enterpriseService">
+			<ref bean="enterpriseService" />
+		</property>
+	</bean>
+	<!--系统日志管理服务 -->
+	<bean id="sysLogService" class="com.cdc.sys.service.SysLogService">
+		<property name="enterpriseService">
+			<ref bean="enterpriseService" />
+		</property>
+	</bean>
+	<!--系统权限管理服务 -->
+	<bean id="sysprivilegesService" class="com.cdc.sys.service.SysprivilegesService">
+		<property name="enterpriseService">
+			<ref bean="enterpriseService" />
+		</property>
+	</bean>
+	
+	<!--我的收藏管理服务 -->
+	<bean id="collectService" class="com.cdc.sys.service.MyCollectService">
+		<property name="enterpriseService">
+			<ref bean="enterpriseService" />
+		</property>
+	</bean>
+	
+	<!--业务配置管理服务 -->
+	<!-- <bean id="businessConfigureService" class="com.cdc.sys.service.BusinessConfigureService">
+		<property name="enterpriseService">
+			<ref bean="enterpriseService" />
+		</property>
+	</bean> -->
+
+    <!--业务配置管理服务 -->
+    <bean id="holidayService" class="com.cdc.sys.service.HolidayService">
+        <property name="enterpriseService">
+            <ref bean="enterpriseService" />
+        </property>
+    </bean>
+
+		
+	<!--我的工作台管理服务 -->
+	<bean id="matterQueryService" class="com.cdc.sys.service.MatterQueryService">
+		<property name="enterpriseService">
+			<ref bean="enterpriseService" />
+		</property>
+	</bean>
+	
+	<!-- 短信管理 -->
+	<bean id="smsManageService" class="com.cdc.sys.smsManage.service.impl.SmsManageServiceImpl">
+		<property name="enterpriseService">
+			<ref bean="enterpriseService" />
+		</property>
+	</bean>
+	
+	<!--短信发送日志  -->
+	<bean id="smsManageLogService" class="com.cdc.sys.smsManage.service.impl.SmsManageLogServiceImpl">
+		<property name="enterpriseService">
+			<ref bean="enterpriseService" />
+		</property>
+	</bean>
+</beans>

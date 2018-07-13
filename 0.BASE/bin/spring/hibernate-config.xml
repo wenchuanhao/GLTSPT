@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING/DTD BEAN/EN"
+ "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans default-lazy-init="false">
+	<description>Spring Defines  Common Framework</description>
+
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="defaultDataSource" />
+		</property>
+        <property name="mappingLocations">
+			<list>
+                <value>classpath:/model/*/hbm/*.hbm.xml</value>
+				<value>classpath:/com/cdc/dc/**/model/*.hbm.xml</value>
+				<value>classpath:/com/cdc/sys/**/model/*.hbm.xml</value>
+				<value>classpath:/com/cdc/inter/**/model/*.hbm.xml</value>
+			</list>
+		</property>
+		<!-- <property name="mappingJarLocations"><list><value>WEB-INF/lib/base1.0.jar</value></list></property> -->
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<!-- <prop key="hibernate.hbm2ddl.auto">update</prop> -->
+				<prop key="hibernate.cache.provider_class">org.hibernate.cache.HashtableCacheProvider</prop>
+			</props>
+		</property>
+	</bean>
+
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate" >
+        <property name="dataSource"><ref bean="defaultDataSource"/></property>
+    </bean>
+</beans>
